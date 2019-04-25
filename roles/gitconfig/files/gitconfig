@@ -1,0 +1,20 @@
+[color]
+    ui = true
+    whitespace = trailing-space,space-before-tab
+    diff = always
+    status = always
+
+[alias]
+    b = branch
+    co = checkout
+    hist = log --color --pretty=format:\"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)\" --relative-date --decorate
+    lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(dim black)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    tnylog = log --oneline --graph --decorate
+    timeline = log --oneline --graph --decorate
+    age = !echo "First commit:" && git log --reverse --pretty=format:'\t\t%ar' | head -n 1 && echo 'Last commit:' && git log --pretty=format:'\t\t%ar' | head -n 1
+    lola = log --graph --oneline --decorate --all
+    ack = -c color.grep.linenumber=\"bold yellow\" \
+          -c color.grep.filename=\"bold green\" \
+          -c color.grep.match=\"reverse yellow\" \
+          grep --break --heading --line-number
+    compare = "!func() { git diff $(git merge-base \"$1\" \"$2\")..\"$2\"; }; func"

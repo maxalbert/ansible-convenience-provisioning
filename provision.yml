@@ -2,3 +2,4 @@
 - hosts: all
   roles:
     - bash_aliases
+    - gitconfig

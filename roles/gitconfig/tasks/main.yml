@@ -1,0 +1,6 @@
+- name: "Add custom settings to ~/.gitconfig"
+  blockinfile:
+    dest: "{{ ansible_env.HOME }}/.gitconfig"
+    block: "{{ lookup('file', 'gitconfig') }}"
+    create: yes
+    backup: no
