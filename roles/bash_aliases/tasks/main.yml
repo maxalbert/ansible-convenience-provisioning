@@ -1,0 +1,15 @@
+- name: "Create file with custom bash aliases"
+  template:
+    src: bash_aliases_custom
+    dest: "{{ ansible_env.HOME }}/.bash_aliases_custom"
+    mode: 0644
+
+- name: "Load custom bash aliases from ~/.bashrc"
+  blockinfile:
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+    block: |
+      # Load custom aliases
+      if [ -f ~/.bash_aliases_custom ]; then
+        . ~/.bash_aliases_custom
+      fi
+    backup: no
