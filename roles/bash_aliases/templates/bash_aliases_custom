@@ -4,6 +4,8 @@ alias sob='source ~/.bashrc'
 
 alias l='ls -lh'
 alias df='df -h'
+alias p='ipython'
+alias psh='pipenv shell'
 
 alias gst='git status --untracked=no'
 alias gstu='git status --untracked=normal'
