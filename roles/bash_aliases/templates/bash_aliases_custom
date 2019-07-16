@@ -24,3 +24,8 @@ alias gb='git branch'
 alias gss='git stash save'
 alias gsh='git show HEAD'
 alias gpgh='git push'
+
+alias pdfnup2x1='pdfnup --nup 2x1 --suffix 2x1'
+alias spacerename="rename 's/ /_/g'"
+alias tmuxhere='tmux new -s $(basename $(pwd))'
+alias timenow='date +%Y-%m-%d_%H.%M.%S'
